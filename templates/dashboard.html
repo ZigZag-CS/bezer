@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>DASHBOARD</h1>
+<p>Salut, {{ request.user.username }}</p>
+
+{% for articol in list %}
+
+    <hr>
+    <p><strong>Autor:</strong> {{ articol.author.username }}</p>
+    <p><strong>Titlu: </strong>{{ articol.title }}</p>
+    <p><strong>Text: </strong>{{ articol.text }}</p>
+    <p><strong>Like please: </strong><a href="">{{ articol.users_like }}</a></p>
+
+{% endfor %}
+
+<hr>
+
+<a href="{% url 'pages:logout' %}">LOGOUT</a>
+</body>
+</html>
